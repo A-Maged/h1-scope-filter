@@ -3,10 +3,21 @@
   "version": "1.0.1",
   "description": "Filter out the scope of a given hackerone.com program",
   "main": "main.js",
+  "homepage": "https://github.com/A-Maged/h1-scope-filter#readme",
   "bin": {
     "h1-scope-filter": "main.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/A-Maged/object-breacher"
+  },
+  "keywords": [
+    "hackerone",
+    "scope",
+    "filter",
+    "h1",
+    "h1-scope-filter"
+  ],
   "author": "a-maged",
   "license": "ISC"
 }
