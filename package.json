@@ -1,7 +1,7 @@
 {
   "name": "h1-scope-filter",
   "version": "1.0.0",
-  "description": "list ",
+  "description": "A simple tool to filter out the scope of a given h1 program",
   "main": "main.js",
   "bin": {
     "h1-scope-filter": "main.js"

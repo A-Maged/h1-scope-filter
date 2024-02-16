@@ -1,21 +1,20 @@
 #! /usr/bin/env node
 
-const BANNER = `Usage: npx h1-scope-filter [--no-bounty] [--no-submission] [--asset-types <ASSET_TYPES>] <handle>
+const BANNER = `Usage: npx h1-scope-filter [--no-bounty] [--out-of-scope] [--asset-types <ASSET_TYPES>] <program_handle>
 
 --no-bounty                  Exclude assets that are not eligible for bounty
 
---no-submission              Exclude assets that are not eligible for submission
+--out-of-scope              Exclude assets that are not eligible for submission
 
 --asset-types <ASSET_TYPES>  Comma separated list of asset types. 
 
-<handle>                     HackerOne handle or URL
+<program_handle>                     HackerOne program handle or URL
 
 Examples:
   npx h1-scope-filter visa
   npx h1-scope-filter --asset-types domain,wildcard bookingcom   # filter by asset types
-  npx h1-scope-filter --no-bounty visa                           # exclude assets that are not eligible for bounty
-  npx h1-scope-filter --no-submission visa                       # exclude assets that are not eligible for submission
-  npx h1-scope-filter --asset-types --no-bounty wildcard mars    # exclude assets that are not eligible for bounty and filter by asset types
+  npx h1-scope-filter --no-bounty mars                           # get assets that are not eligible for bounty
+  npx h1-scope-filter --out-of-scope security                    # get assets that are not eligible for submission(out of scope)
 `
 
 const ASSET_TYPES_LIST = [
@@ -47,8 +46,8 @@ const assetTypes = args.includes("--asset-types")
       .filter((t) => ASSET_TYPES_LIST.includes(t))
   : []
 
-const eligibleForBounty = !args.includes("--no-bounty")
-const eligibleForSubmission = !args.includes("--no-submission")
+const eligibleForSubmission = !args.includes("--out-of-scope")
+const eligibleForBounty = eligibleForSubmission ? !args.includes("--no-bounty") : false
 let targetHandle = args[args.length - 1]
 
 /* if no handle is supplied */
