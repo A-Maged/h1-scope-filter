@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "list ",
   "main": "main.js",
+  "bin": {
+    "h1-scope-collector": "main.js"
+  },
   "keywords": [],
   "author": "a-maged",
   "license": "ISC"
