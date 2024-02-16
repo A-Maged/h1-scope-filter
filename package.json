@@ -1,10 +1,10 @@
 {
-  "name": "h1-scope-collector",
+  "name": "h1-scope-filter",
   "version": "1.0.0",
   "description": "list ",
   "main": "main.js",
   "bin": {
-    "h1-scope-collector": "main.js"
+    "h1-scope-filter": "main.js"
   },
   "keywords": [],
   "author": "a-maged",

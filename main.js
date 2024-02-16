@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const BANNER = `Usage: npx h1-scope-collector [--no-bounty] [--no-submission] [--asset-types <ASSET_TYPES>] <handle>
+const BANNER = `Usage: npx h1-scope-filter [--no-bounty] [--no-submission] [--asset-types <ASSET_TYPES>] <handle>
 
 --no-bounty                  Exclude assets that are not eligible for bounty
 
@@ -11,11 +11,11 @@ const BANNER = `Usage: npx h1-scope-collector [--no-bounty] [--no-submission] [-
 <handle>                     HackerOne handle or URL
 
 Examples:
-  npx h1-scope-collector visa
-  npx h1-scope-collector --asset-types domain,wildcard bookingcom   # filter by asset types
-  npx h1-scope-collector --no-bounty visa                           # exclude assets that are not eligible for bounty
-  npx h1-scope-collector --no-submission visa                       # exclude assets that are not eligible for submission
-  npx h1-scope-collector --asset-types --no-bounty wildcard mars    # exclude assets that are not eligible for bounty and filter by asset types
+  npx h1-scope-filter visa
+  npx h1-scope-filter --asset-types domain,wildcard bookingcom   # filter by asset types
+  npx h1-scope-filter --no-bounty visa                           # exclude assets that are not eligible for bounty
+  npx h1-scope-filter --no-submission visa                       # exclude assets that are not eligible for submission
+  npx h1-scope-filter --asset-types --no-bounty wildcard mars    # exclude assets that are not eligible for bounty and filter by asset types
 `
 
 const ASSET_TYPES_LIST = [
