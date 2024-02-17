@@ -41,7 +41,7 @@ const args = process.argv.slice(2)
 const assetTypes = args.includes("--asset-types")
   ? args[args.indexOf("--asset-types") + 1]
       ?.toUpperCase()
-      .replace("DOMAIN", "URL") /* domain is used in the UI, but URL is used in the API */
+      .replace("DOMAIN", "URL") /* DOMAIN is used in the UI, but URL is used in the API */
       ?.split(",")
       .filter((t) => ASSET_TYPES_LIST.includes(t))
   : []
@@ -50,8 +50,9 @@ const eligibleForSubmission = !args.includes("--out-of-scope")
 const eligibleForBounty = eligibleForSubmission ? !args.includes("--no-bounty") : false
 let targetHandle = args[args.length - 1]
 
-/* if no handle is supplied */
-if (!targetHandle || targetHandle.includes("--")) {
+const isInvalidHandle = !targetHandle || targetHandle.includes("--") || args[args.length - 2] === "--asset-types"
+
+if (isInvalidHandle) {
   console.log(BANNER)
   console.log("Possible asset types:")
   console.log("\x1b[32m", ASSET_TYPES_LIST.join(", ")) // Green
