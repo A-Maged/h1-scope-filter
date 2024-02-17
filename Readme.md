@@ -34,8 +34,9 @@ npx h1-scope-filter [--no-bounty] [--out-of-scope] [--asset-types <ASSET_TYPES>]
 
 #### Possible asset types:
 
-- `CIDR`
+- `DOMAIN`
 - `URL`
+- `CIDR`
 - `APPLE_STORE_APP_ID`
 - `TESTFLIGHT`
 - `OTHER_IPA`

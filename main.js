@@ -18,8 +18,9 @@ Examples:
 `
 
 const ASSET_TYPES_LIST = [
-  "CIDR",
+  "DOMAIN",
   "URL",
+  "CIDR",
   "APPLE_STORE_APP_ID",
   "TESTFLIGHT",
   "OTHER_IPA",
